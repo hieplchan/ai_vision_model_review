@@ -1,0 +1,29 @@
+
+
+
+================= Micronet Deep Learning Vision =================
+Version: 0.2
+Author: Luong Chan Hiep
+Email: hiep.lchan@gmail.com
+-----------------------------------------------
+Working on GPU
+CUDA devices count: 1
+CUDA devices name: GeForce GTX 1080
+=================================================================
+
+
+
+Test set[3840/50000]: Top1: 23.75%, Top5: 7.03%, Average loss: 0.9055, Average time cost: 0.002 s
+Test set[7680/50000]: Top1: 20.23%, Top5: 6.16%, Average loss: 0.7914, Average time cost: 0.002 s
+Test set[11520/50000]: Top1: 21.88%, Top5: 6.27%, Average loss: 0.8490, Average time cost: 0.002 s
+Test set[15360/50000]: Top1: 22.17%, Top5: 5.92%, Average loss: 0.8470, Average time cost: 0.001 s
+Test set[19200/50000]: Top1: 22.04%, Top5: 5.86%, Average loss: 0.8468, Average time cost: 0.002 s
+Test set[23040/50000]: Top1: 23.43%, Top5: 6.61%, Average loss: 0.9080, Average time cost: 0.001 s
+Test set[26880/50000]: Top1: 25.09%, Top5: 7.62%, Average loss: 0.9914, Average time cost: 0.001 s
+Test set[30720/50000]: Top1: 25.44%, Top5: 8.12%, Average loss: 1.0210, Average time cost: 0.001 s
+Test set[34560/50000]: Top1: 26.61%, Top5: 8.73%, Average loss: 1.0728, Average time cost: 0.001 s
+Test set[38400/50000]: Top1: 27.17%, Top5: 9.15%, Average loss: 1.1043, Average time cost: 0.001 s
+Test set[42240/50000]: Top1: 27.79%, Top5: 9.61%, Average loss: 1.1383, Average time cost: 0.001 s
+Test set[46080/50000]: Top1: 28.27%, Top5: 9.90%, Average loss: 1.1584, Average time cost: 0.001 s
+Test set[49920/50000]: Top1: 28.07%, Top5: 9.71%, Average loss: 1.1463, Average time cost: 0.001 s
+Test set[50000]: Top1: 28.12%, Top5: 9.71%, Average loss: 1.1477, Average time cost: 0.001 s

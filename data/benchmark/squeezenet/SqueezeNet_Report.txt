@@ -1,0 +1,190 @@
+
+
+
+================= Micronet Deep Learning Vision =================
+Version: 0.2
+Author: Luong Chan Hiep
+Email: hiep.lchan@gmail.com
+-----------------------------------------------
+Working on GPU
+CUDA devices count: 1
+CUDA devices name: GeForce GTX 1080
+=================================================================
+
+
+
+========================= MODEL SUMMARY =========================
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 111, 111]           1,792
+              ReLU-2         [-1, 64, 111, 111]               0
+         MaxPool2d-3           [-1, 64, 55, 55]               0
+            Conv2d-4           [-1, 16, 55, 55]           1,040
+              ReLU-5           [-1, 16, 55, 55]               0
+            Conv2d-6           [-1, 64, 55, 55]           1,088
+              ReLU-7           [-1, 64, 55, 55]               0
+            Conv2d-8           [-1, 64, 55, 55]           9,280
+              ReLU-9           [-1, 64, 55, 55]               0
+             Fire-10          [-1, 128, 55, 55]               0
+           Conv2d-11           [-1, 16, 55, 55]           2,064
+             ReLU-12           [-1, 16, 55, 55]               0
+           Conv2d-13           [-1, 64, 55, 55]           1,088
+             ReLU-14           [-1, 64, 55, 55]               0
+           Conv2d-15           [-1, 64, 55, 55]           9,280
+             ReLU-16           [-1, 64, 55, 55]               0
+             Fire-17          [-1, 128, 55, 55]               0
+        MaxPool2d-18          [-1, 128, 27, 27]               0
+           Conv2d-19           [-1, 32, 27, 27]           4,128
+             ReLU-20           [-1, 32, 27, 27]               0
+           Conv2d-21          [-1, 128, 27, 27]           4,224
+             ReLU-22          [-1, 128, 27, 27]               0
+           Conv2d-23          [-1, 128, 27, 27]          36,992
+             ReLU-24          [-1, 128, 27, 27]               0
+             Fire-25          [-1, 256, 27, 27]               0
+           Conv2d-26           [-1, 32, 27, 27]           8,224
+             ReLU-27           [-1, 32, 27, 27]               0
+           Conv2d-28          [-1, 128, 27, 27]           4,224
+             ReLU-29          [-1, 128, 27, 27]               0
+           Conv2d-30          [-1, 128, 27, 27]          36,992
+             ReLU-31          [-1, 128, 27, 27]               0
+             Fire-32          [-1, 256, 27, 27]               0
+        MaxPool2d-33          [-1, 256, 13, 13]               0
+           Conv2d-34           [-1, 48, 13, 13]          12,336
+             ReLU-35           [-1, 48, 13, 13]               0
+           Conv2d-36          [-1, 192, 13, 13]           9,408
+             ReLU-37          [-1, 192, 13, 13]               0
+           Conv2d-38          [-1, 192, 13, 13]          83,136
+             ReLU-39          [-1, 192, 13, 13]               0
+             Fire-40          [-1, 384, 13, 13]               0
+           Conv2d-41           [-1, 48, 13, 13]          18,480
+             ReLU-42           [-1, 48, 13, 13]               0
+           Conv2d-43          [-1, 192, 13, 13]           9,408
+             ReLU-44          [-1, 192, 13, 13]               0
+           Conv2d-45          [-1, 192, 13, 13]          83,136
+             ReLU-46          [-1, 192, 13, 13]               0
+             Fire-47          [-1, 384, 13, 13]               0
+           Conv2d-48           [-1, 64, 13, 13]          24,640
+             ReLU-49           [-1, 64, 13, 13]               0
+           Conv2d-50          [-1, 256, 13, 13]          16,640
+             ReLU-51          [-1, 256, 13, 13]               0
+           Conv2d-52          [-1, 256, 13, 13]         147,712
+             ReLU-53          [-1, 256, 13, 13]               0
+             Fire-54          [-1, 512, 13, 13]               0
+           Conv2d-55           [-1, 64, 13, 13]          32,832
+             ReLU-56           [-1, 64, 13, 13]               0
+           Conv2d-57          [-1, 256, 13, 13]          16,640
+             ReLU-58          [-1, 256, 13, 13]               0
+           Conv2d-59          [-1, 256, 13, 13]         147,712
+             ReLU-60          [-1, 256, 13, 13]               0
+             Fire-61          [-1, 512, 13, 13]               0
+          Dropout-62          [-1, 512, 13, 13]               0
+           Conv2d-63         [-1, 1000, 13, 13]         513,000
+             ReLU-64         [-1, 1000, 13, 13]               0
+AdaptiveAvgPool2d-65           [-1, 1000, 1, 1]               0
+================================================================
+Total params: 1,235,496
+Trainable params: 1,235,496
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 53.76
+Params size (MB): 4.71
+Estimated Total Size (MB): 59.05
+----------------------------------------------------------------
+
+
+
+========================= MODEL REPORT ==========================
+SqueezeNet(
+  0.356 GMac, 100.000% MACs, 
+  (features): Sequential(
+    0.269 GMac, 75.542% MACs, 
+    (0): Conv2d(0.022 GMac, 6.204% MACs, 3, 64, kernel_size=(3, 3), stride=(2, 2))
+    (1): ReLU(0.001 GMac, 0.222% MACs, inplace)
+    (2): MaxPool2d(0.001 GMac, 0.222% MACs, kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (3): Fire(
+      0.035 GMac, 9.820% MACs, 
+      (squeeze): Conv2d(0.003 GMac, 0.884% MACs, 64, 16, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.014% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.925% MACs, 16, 64, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.054% MACs, inplace)
+      (expand3x3): Conv2d(0.028 GMac, 7.888% MACs, 16, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.054% MACs, inplace)
+    )
+    (4): Fire(
+      0.038 GMac, 10.690% MACs, 
+      (squeeze): Conv2d(0.006 GMac, 1.755% MACs, 128, 16, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.014% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.925% MACs, 16, 64, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.054% MACs, inplace)
+      (expand3x3): Conv2d(0.028 GMac, 7.888% MACs, 16, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.054% MACs, inplace)
+    )
+    (5): MaxPool2d(0.0 GMac, 0.109% MACs, kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (6): Fire(
+      0.033 GMac, 9.348% MACs, 
+      (squeeze): Conv2d(0.003 GMac, 0.846% MACs, 128, 32, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.007% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.865% MACs, 32, 128, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.026% MACs, inplace)
+      (expand3x3): Conv2d(0.027 GMac, 7.578% MACs, 32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.026% MACs, inplace)
+    )
+    (7): Fire(
+      0.036 GMac, 10.187% MACs, 
+      (squeeze): Conv2d(0.006 GMac, 1.685% MACs, 256, 32, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.007% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.865% MACs, 32, 128, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.026% MACs, inplace)
+      (expand3x3): Conv2d(0.027 GMac, 7.578% MACs, 32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.026% MACs, inplace)
+    )
+    (8): MaxPool2d(0.0 GMac, 0.052% MACs, kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=True)
+    (9): Fire(
+      0.018 GMac, 5.001% MACs, 
+      (squeeze): Conv2d(0.002 GMac, 0.586% MACs, 256, 48, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.002% MACs, inplace)
+      (expand1x1): Conv2d(0.002 GMac, 0.447% MACs, 48, 192, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.009% MACs, inplace)
+      (expand3x3): Conv2d(0.014 GMac, 3.948% MACs, 48, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.009% MACs, inplace)
+    )
+    (10): Fire(
+      0.019 GMac, 5.293% MACs, 
+      (squeeze): Conv2d(0.003 GMac, 0.878% MACs, 384, 48, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.002% MACs, inplace)
+      (expand1x1): Conv2d(0.002 GMac, 0.447% MACs, 48, 192, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.009% MACs, inplace)
+      (expand3x3): Conv2d(0.014 GMac, 3.948% MACs, 48, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.009% MACs, inplace)
+    )
+    (11): Fire(
+      0.032 GMac, 9.003% MACs, 
+      (squeeze): Conv2d(0.004 GMac, 1.170% MACs, 384, 64, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.003% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.790% MACs, 64, 256, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.012% MACs, inplace)
+      (expand3x3): Conv2d(0.025 GMac, 7.015% MACs, 64, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.012% MACs, inplace)
+    )
+    (12): Fire(
+      0.033 GMac, 9.392% MACs, 
+      (squeeze): Conv2d(0.006 GMac, 1.559% MACs, 512, 64, kernel_size=(1, 1), stride=(1, 1))
+      (squeeze_activation): ReLU(0.0 GMac, 0.003% MACs, inplace)
+      (expand1x1): Conv2d(0.003 GMac, 0.790% MACs, 64, 256, kernel_size=(1, 1), stride=(1, 1))
+      (expand1x1_activation): ReLU(0.0 GMac, 0.012% MACs, inplace)
+      (expand3x3): Conv2d(0.025 GMac, 7.015% MACs, 64, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (expand3x3_activation): ReLU(0.0 GMac, 0.012% MACs, inplace)
+    )
+  )
+  (classifier): Sequential(
+    0.087 GMac, 24.458% MACs, 
+    (0): Dropout(0.0 GMac, 0.000% MACs, p=0.5)
+    (1): Conv2d(0.087 GMac, 24.363% MACs, 512, 1000, kernel_size=(1, 1), stride=(1, 1))
+    (2): ReLU(0.0 GMac, 0.047% MACs, inplace)
+    (3): AdaptiveAvgPool2d(0.0 GMac, 0.047% MACs, output_size=(1, 1))
+  )
+)
+Flops:  355.86 MMac
+Params: 1.24 M

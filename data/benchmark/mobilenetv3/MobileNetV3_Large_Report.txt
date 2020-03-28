@@ -1,0 +1,548 @@
+
+
+
+================= Micronet Deep Learning Vision =================
+Version: 0.2
+Author: Luong Chan Hiep
+Email: hiep.lchan@gmail.com
+-----------------------------------------------
+Working on GPU
+CUDA devices count: 1
+CUDA devices name: GeForce GTX 1080
+=================================================================
+
+
+
+========================= MODEL SUMMARY =========================
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 16, 112, 112]             432
+       BatchNorm2d-2         [-1, 16, 112, 112]              32
+            hswish-3         [-1, 16, 112, 112]               0
+            Conv2d-4         [-1, 16, 112, 112]             256
+       BatchNorm2d-5         [-1, 16, 112, 112]              32
+              ReLU-6         [-1, 16, 112, 112]               0
+            Conv2d-7         [-1, 16, 112, 112]             144
+       BatchNorm2d-8         [-1, 16, 112, 112]              32
+              ReLU-9         [-1, 16, 112, 112]               0
+           Conv2d-10         [-1, 16, 112, 112]             256
+      BatchNorm2d-11         [-1, 16, 112, 112]              32
+            Block-12         [-1, 16, 112, 112]               0
+           Conv2d-13         [-1, 64, 112, 112]           1,024
+      BatchNorm2d-14         [-1, 64, 112, 112]             128
+             ReLU-15         [-1, 64, 112, 112]               0
+           Conv2d-16           [-1, 64, 56, 56]             576
+      BatchNorm2d-17           [-1, 64, 56, 56]             128
+             ReLU-18           [-1, 64, 56, 56]               0
+           Conv2d-19           [-1, 24, 56, 56]           1,536
+      BatchNorm2d-20           [-1, 24, 56, 56]              48
+            Block-21           [-1, 24, 56, 56]               0
+           Conv2d-22           [-1, 72, 56, 56]           1,728
+      BatchNorm2d-23           [-1, 72, 56, 56]             144
+             ReLU-24           [-1, 72, 56, 56]               0
+           Conv2d-25           [-1, 72, 56, 56]             648
+      BatchNorm2d-26           [-1, 72, 56, 56]             144
+             ReLU-27           [-1, 72, 56, 56]               0
+           Conv2d-28           [-1, 24, 56, 56]           1,728
+      BatchNorm2d-29           [-1, 24, 56, 56]              48
+            Block-30           [-1, 24, 56, 56]               0
+           Conv2d-31           [-1, 72, 56, 56]           1,728
+      BatchNorm2d-32           [-1, 72, 56, 56]             144
+             ReLU-33           [-1, 72, 56, 56]               0
+           Conv2d-34           [-1, 72, 28, 28]           1,800
+      BatchNorm2d-35           [-1, 72, 28, 28]             144
+             ReLU-36           [-1, 72, 28, 28]               0
+           Conv2d-37           [-1, 40, 28, 28]           2,880
+      BatchNorm2d-38           [-1, 40, 28, 28]              80
+           Conv2d-39           [-1, 10, 28, 28]             400
+      BatchNorm2d-40           [-1, 10, 28, 28]              20
+             ReLU-41           [-1, 10, 28, 28]               0
+           Conv2d-42           [-1, 40, 28, 28]             400
+      BatchNorm2d-43           [-1, 40, 28, 28]              80
+         hsigmoid-44           [-1, 40, 28, 28]               0
+         SeModule-45           [-1, 40, 28, 28]               0
+            Block-46           [-1, 40, 28, 28]               0
+           Conv2d-47          [-1, 120, 28, 28]           4,800
+      BatchNorm2d-48          [-1, 120, 28, 28]             240
+             ReLU-49          [-1, 120, 28, 28]               0
+           Conv2d-50          [-1, 120, 28, 28]           3,000
+      BatchNorm2d-51          [-1, 120, 28, 28]             240
+             ReLU-52          [-1, 120, 28, 28]               0
+           Conv2d-53           [-1, 40, 28, 28]           4,800
+      BatchNorm2d-54           [-1, 40, 28, 28]              80
+           Conv2d-55           [-1, 10, 28, 28]             400
+      BatchNorm2d-56           [-1, 10, 28, 28]              20
+             ReLU-57           [-1, 10, 28, 28]               0
+           Conv2d-58           [-1, 40, 28, 28]             400
+      BatchNorm2d-59           [-1, 40, 28, 28]              80
+         hsigmoid-60           [-1, 40, 28, 28]               0
+         SeModule-61           [-1, 40, 28, 28]               0
+            Block-62           [-1, 40, 28, 28]               0
+           Conv2d-63          [-1, 120, 28, 28]           4,800
+      BatchNorm2d-64          [-1, 120, 28, 28]             240
+             ReLU-65          [-1, 120, 28, 28]               0
+           Conv2d-66          [-1, 120, 28, 28]           3,000
+      BatchNorm2d-67          [-1, 120, 28, 28]             240
+             ReLU-68          [-1, 120, 28, 28]               0
+           Conv2d-69           [-1, 40, 28, 28]           4,800
+      BatchNorm2d-70           [-1, 40, 28, 28]              80
+           Conv2d-71           [-1, 10, 28, 28]             400
+      BatchNorm2d-72           [-1, 10, 28, 28]              20
+             ReLU-73           [-1, 10, 28, 28]               0
+           Conv2d-74           [-1, 40, 28, 28]             400
+      BatchNorm2d-75           [-1, 40, 28, 28]              80
+         hsigmoid-76           [-1, 40, 28, 28]               0
+         SeModule-77           [-1, 40, 28, 28]               0
+            Block-78           [-1, 40, 28, 28]               0
+           Conv2d-79          [-1, 240, 28, 28]           9,600
+      BatchNorm2d-80          [-1, 240, 28, 28]             480
+           hswish-81          [-1, 240, 28, 28]               0
+           Conv2d-82          [-1, 240, 14, 14]           2,160
+      BatchNorm2d-83          [-1, 240, 14, 14]             480
+           hswish-84          [-1, 240, 14, 14]               0
+           Conv2d-85           [-1, 80, 14, 14]          19,200
+      BatchNorm2d-86           [-1, 80, 14, 14]             160
+            Block-87           [-1, 80, 14, 14]               0
+           Conv2d-88          [-1, 200, 14, 14]          16,000
+      BatchNorm2d-89          [-1, 200, 14, 14]             400
+           hswish-90          [-1, 200, 14, 14]               0
+           Conv2d-91          [-1, 200, 14, 14]           1,800
+      BatchNorm2d-92          [-1, 200, 14, 14]             400
+           hswish-93          [-1, 200, 14, 14]               0
+           Conv2d-94           [-1, 80, 14, 14]          16,000
+      BatchNorm2d-95           [-1, 80, 14, 14]             160
+            Block-96           [-1, 80, 14, 14]               0
+           Conv2d-97          [-1, 184, 14, 14]          14,720
+      BatchNorm2d-98          [-1, 184, 14, 14]             368
+           hswish-99          [-1, 184, 14, 14]               0
+          Conv2d-100          [-1, 184, 14, 14]           1,656
+     BatchNorm2d-101          [-1, 184, 14, 14]             368
+          hswish-102          [-1, 184, 14, 14]               0
+          Conv2d-103           [-1, 80, 14, 14]          14,720
+     BatchNorm2d-104           [-1, 80, 14, 14]             160
+           Block-105           [-1, 80, 14, 14]               0
+          Conv2d-106          [-1, 184, 14, 14]          14,720
+     BatchNorm2d-107          [-1, 184, 14, 14]             368
+          hswish-108          [-1, 184, 14, 14]               0
+          Conv2d-109          [-1, 184, 14, 14]           1,656
+     BatchNorm2d-110          [-1, 184, 14, 14]             368
+          hswish-111          [-1, 184, 14, 14]               0
+          Conv2d-112           [-1, 80, 14, 14]          14,720
+     BatchNorm2d-113           [-1, 80, 14, 14]             160
+           Block-114           [-1, 80, 14, 14]               0
+          Conv2d-115          [-1, 480, 14, 14]          38,400
+     BatchNorm2d-116          [-1, 480, 14, 14]             960
+          hswish-117          [-1, 480, 14, 14]               0
+          Conv2d-118          [-1, 480, 14, 14]           4,320
+     BatchNorm2d-119          [-1, 480, 14, 14]             960
+          hswish-120          [-1, 480, 14, 14]               0
+          Conv2d-121          [-1, 112, 14, 14]          53,760
+     BatchNorm2d-122          [-1, 112, 14, 14]             224
+          Conv2d-123           [-1, 28, 14, 14]           3,136
+     BatchNorm2d-124           [-1, 28, 14, 14]              56
+            ReLU-125           [-1, 28, 14, 14]               0
+          Conv2d-126          [-1, 112, 14, 14]           3,136
+     BatchNorm2d-127          [-1, 112, 14, 14]             224
+        hsigmoid-128          [-1, 112, 14, 14]               0
+        SeModule-129          [-1, 112, 14, 14]               0
+          Conv2d-130          [-1, 112, 14, 14]           8,960
+     BatchNorm2d-131          [-1, 112, 14, 14]             224
+           Block-132          [-1, 112, 14, 14]               0
+          Conv2d-133          [-1, 672, 14, 14]          75,264
+     BatchNorm2d-134          [-1, 672, 14, 14]           1,344
+          hswish-135          [-1, 672, 14, 14]               0
+          Conv2d-136          [-1, 672, 14, 14]           6,048
+     BatchNorm2d-137          [-1, 672, 14, 14]           1,344
+          hswish-138          [-1, 672, 14, 14]               0
+          Conv2d-139          [-1, 112, 14, 14]          75,264
+     BatchNorm2d-140          [-1, 112, 14, 14]             224
+          Conv2d-141           [-1, 28, 14, 14]           3,136
+     BatchNorm2d-142           [-1, 28, 14, 14]              56
+            ReLU-143           [-1, 28, 14, 14]               0
+          Conv2d-144          [-1, 112, 14, 14]           3,136
+     BatchNorm2d-145          [-1, 112, 14, 14]             224
+        hsigmoid-146          [-1, 112, 14, 14]               0
+        SeModule-147          [-1, 112, 14, 14]               0
+           Block-148          [-1, 112, 14, 14]               0
+          Conv2d-149          [-1, 672, 14, 14]          75,264
+     BatchNorm2d-150          [-1, 672, 14, 14]           1,344
+          hswish-151          [-1, 672, 14, 14]               0
+          Conv2d-152          [-1, 672, 14, 14]          16,800
+     BatchNorm2d-153          [-1, 672, 14, 14]           1,344
+          hswish-154          [-1, 672, 14, 14]               0
+          Conv2d-155          [-1, 160, 14, 14]         107,520
+     BatchNorm2d-156          [-1, 160, 14, 14]             320
+          Conv2d-157           [-1, 40, 14, 14]           6,400
+     BatchNorm2d-158           [-1, 40, 14, 14]              80
+            ReLU-159           [-1, 40, 14, 14]               0
+          Conv2d-160          [-1, 160, 14, 14]           6,400
+     BatchNorm2d-161          [-1, 160, 14, 14]             320
+        hsigmoid-162          [-1, 160, 14, 14]               0
+        SeModule-163          [-1, 160, 14, 14]               0
+          Conv2d-164          [-1, 160, 14, 14]          17,920
+     BatchNorm2d-165          [-1, 160, 14, 14]             320
+           Block-166          [-1, 160, 14, 14]               0
+          Conv2d-167          [-1, 672, 14, 14]         107,520
+     BatchNorm2d-168          [-1, 672, 14, 14]           1,344
+          hswish-169          [-1, 672, 14, 14]               0
+          Conv2d-170            [-1, 672, 7, 7]          16,800
+     BatchNorm2d-171            [-1, 672, 7, 7]           1,344
+          hswish-172            [-1, 672, 7, 7]               0
+          Conv2d-173            [-1, 160, 7, 7]         107,520
+     BatchNorm2d-174            [-1, 160, 7, 7]             320
+          Conv2d-175             [-1, 40, 7, 7]           6,400
+     BatchNorm2d-176             [-1, 40, 7, 7]              80
+            ReLU-177             [-1, 40, 7, 7]               0
+          Conv2d-178            [-1, 160, 7, 7]           6,400
+     BatchNorm2d-179            [-1, 160, 7, 7]             320
+        hsigmoid-180            [-1, 160, 7, 7]               0
+        SeModule-181            [-1, 160, 7, 7]               0
+           Block-182            [-1, 160, 7, 7]               0
+          Conv2d-183            [-1, 960, 7, 7]         153,600
+     BatchNorm2d-184            [-1, 960, 7, 7]           1,920
+          hswish-185            [-1, 960, 7, 7]               0
+          Conv2d-186            [-1, 960, 7, 7]          24,000
+     BatchNorm2d-187            [-1, 960, 7, 7]           1,920
+          hswish-188            [-1, 960, 7, 7]               0
+          Conv2d-189            [-1, 160, 7, 7]         153,600
+     BatchNorm2d-190            [-1, 160, 7, 7]             320
+          Conv2d-191             [-1, 40, 7, 7]           6,400
+     BatchNorm2d-192             [-1, 40, 7, 7]              80
+            ReLU-193             [-1, 40, 7, 7]               0
+          Conv2d-194            [-1, 160, 7, 7]           6,400
+     BatchNorm2d-195            [-1, 160, 7, 7]             320
+        hsigmoid-196            [-1, 160, 7, 7]               0
+        SeModule-197            [-1, 160, 7, 7]               0
+           Block-198            [-1, 160, 7, 7]               0
+          Conv2d-199            [-1, 960, 7, 7]         153,600
+     BatchNorm2d-200            [-1, 960, 7, 7]           1,920
+          hswish-201            [-1, 960, 7, 7]               0
+          Linear-202                 [-1, 1280]       1,230,080
+     BatchNorm1d-203                 [-1, 1280]           2,560
+          hswish-204                 [-1, 1280]               0
+          Linear-205                 [-1, 1000]       1,281,000
+================================================================
+Total params: 3,955,916
+Trainable params: 3,955,916
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 117.27
+Params size (MB): 15.09
+Estimated Total Size (MB): 132.93
+----------------------------------------------------------------
+
+
+
+========================= MODEL REPORT ==========================
+MobileNetV3_Large(
+  0.274 GMac, 100.000% MACs, 
+  (conv1): Conv2d(0.005 GMac, 1.981% MACs, 3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+  (bn1): BatchNorm2d(0.0 GMac, 0.147% MACs, 16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (hs1): hswish(0.0 GMac, 0.000% MACs, )
+  (bneck): Sequential(
+    0.258 GMac, 94.170% MACs, 
+    (0): Block(
+      0.01 GMac, 3.595% MACs, 
+      (conv1): Conv2d(0.003 GMac, 1.174% MACs, 16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.147% MACs, 16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.0 GMac, 0.147% MACs, inplace)
+      (conv2): Conv2d(0.002 GMac, 0.660% MACs, 16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=16, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.147% MACs, 16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.0 GMac, 0.147% MACs, inplace)
+      (conv3): Conv2d(0.003 GMac, 1.174% MACs, 16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.147% MACs, 16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (1): Block(
+      0.023 GMac, 8.271% MACs, 
+      (conv1): Conv2d(0.013 GMac, 4.695% MACs, 16, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.002 GMac, 0.587% MACs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.001 GMac, 0.367% MACs, inplace)
+      (conv2): Conv2d(0.002 GMac, 0.660% MACs, 64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=64, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.147% MACs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.001 GMac, 0.367% MACs, inplace)
+      (conv3): Conv2d(0.005 GMac, 1.761% MACs, 64, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.055% MACs, 24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (2): Block(
+      0.014 GMac, 5.254% MACs, 
+      (conv1): Conv2d(0.005 GMac, 1.981% MACs, 24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.165% MACs, 72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.0 GMac, 0.165% MACs, inplace)
+      (conv2): Conv2d(0.002 GMac, 0.743% MACs, 72, 72, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=72, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.165% MACs, 72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.0 GMac, 0.165% MACs, inplace)
+      (conv3): Conv2d(0.005 GMac, 1.981% MACs, 72, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.055% MACs, 24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (3): Block(
+      0.011 GMac, 3.915% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.261% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.261% MACs, 
+          (0): Conv2d(0.0 GMac, 0.115% MACs, 40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.006% MACs, 10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.003% MACs, inplace)
+          (3): Conv2d(0.0 GMac, 0.115% MACs, 10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.005 GMac, 1.981% MACs, 24, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.165% MACs, 72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.0 GMac, 0.103% MACs, inplace)
+      (conv2): Conv2d(0.001 GMac, 0.516% MACs, 72, 72, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=72, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.041% MACs, 72, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.0 GMac, 0.103% MACs, inplace)
+      (conv3): Conv2d(0.002 GMac, 0.825% MACs, 72, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (4): Block(
+      0.011 GMac, 4.101% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.261% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.261% MACs, 
+          (0): Conv2d(0.0 GMac, 0.115% MACs, 40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.006% MACs, 10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.003% MACs, inplace)
+          (3): Conv2d(0.0 GMac, 0.115% MACs, 10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.004 GMac, 1.375% MACs, 40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.069% MACs, 120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.0 GMac, 0.069% MACs, inplace)
+      (conv2): Conv2d(0.002 GMac, 0.860% MACs, 120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.069% MACs, 120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.0 GMac, 0.069% MACs, inplace)
+      (conv3): Conv2d(0.004 GMac, 1.375% MACs, 120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (5): Block(
+      0.011 GMac, 4.101% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.261% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.261% MACs, 
+          (0): Conv2d(0.0 GMac, 0.115% MACs, 40, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.006% MACs, 10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.003% MACs, inplace)
+          (3): Conv2d(0.0 GMac, 0.115% MACs, 10, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.004 GMac, 1.375% MACs, 40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.069% MACs, 120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): ReLU(0.0 GMac, 0.069% MACs, inplace)
+      (conv2): Conv2d(0.002 GMac, 0.860% MACs, 120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.069% MACs, 120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): ReLU(0.0 GMac, 0.069% MACs, inplace)
+      (conv3): Conv2d(0.004 GMac, 1.375% MACs, 120, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.023% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (6): Block(
+      0.012 GMac, 4.465% MACs, 
+      (conv1): Conv2d(0.008 GMac, 2.751% MACs, 40, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.138% MACs, 240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.0 GMac, 0.155% MACs, 240, 240, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=240, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.034% MACs, 240, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.004 GMac, 1.375% MACs, 240, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.011% MACs, 80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (7): Block(
+      0.007 GMac, 2.490% MACs, 
+      (conv1): Conv2d(0.003 GMac, 1.146% MACs, 80, 200, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.029% MACs, 200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.0 GMac, 0.129% MACs, 200, 200, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=200, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.029% MACs, 200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.003 GMac, 1.146% MACs, 200, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.011% MACs, 80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (8): Block(
+      0.006 GMac, 2.292% MACs, 
+      (conv1): Conv2d(0.003 GMac, 1.055% MACs, 80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.026% MACs, 184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.0 GMac, 0.119% MACs, 184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.026% MACs, 184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.003 GMac, 1.055% MACs, 184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.011% MACs, 80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (9): Block(
+      0.006 GMac, 2.292% MACs, 
+      (conv1): Conv2d(0.003 GMac, 1.055% MACs, 80, 184, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.026% MACs, 184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.0 GMac, 0.119% MACs, 184, 184, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=184, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.026% MACs, 184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.003 GMac, 1.055% MACs, 184, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.011% MACs, 80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (10): Block(
+      0.022 GMac, 8.195% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.471% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.471% MACs, 
+          (0): Conv2d(0.001 GMac, 0.225% MACs, 112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.004% MACs, 28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.002% MACs, inplace)
+          (3): Conv2d(0.001 GMac, 0.225% MACs, 28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.016% MACs, 112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.008 GMac, 2.751% MACs, 80, 480, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.069% MACs, 480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.001 GMac, 0.309% MACs, 480, 480, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=480, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.069% MACs, 480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.011 GMac, 3.851% MACs, 480, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.016% MACs, 112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        0.002 GMac, 0.658% MACs, 
+        (0): Conv2d(0.002 GMac, 0.642% MACs, 80, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(0.0 GMac, 0.016% MACs, 112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (11): Block(
+      0.033 GMac, 11.897% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.471% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.471% MACs, 
+          (0): Conv2d(0.001 GMac, 0.225% MACs, 112, 28, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.004% MACs, 28, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.002% MACs, inplace)
+          (3): Conv2d(0.001 GMac, 0.225% MACs, 28, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.016% MACs, 112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.015 GMac, 5.392% MACs, 112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.096% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.001 GMac, 0.433% MACs, 672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.096% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.015 GMac, 5.392% MACs, 672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.016% MACs, 112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (12): Block(
+      0.046 GMac, 16.769% MACs, 
+      (se): SeModule(
+        0.003 GMac, 0.948% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.003 GMac, 0.948% MACs, 
+          (0): Conv2d(0.001 GMac, 0.458% MACs, 160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.006% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.003% MACs, inplace)
+          (3): Conv2d(0.001 GMac, 0.458% MACs, 40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.023% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.015 GMac, 5.392% MACs, 112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.096% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.003 GMac, 1.204% MACs, 672, 672, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=672, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.096% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.021 GMac, 7.703% MACs, 672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.023% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        0.004 GMac, 1.307% MACs, 
+        (0): Conv2d(0.004 GMac, 1.284% MACs, 112, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(0.0 GMac, 0.023% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (13): Block(
+      0.028 GMac, 10.292% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.237% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.237% MACs, 
+          (0): Conv2d(0.0 GMac, 0.115% MACs, 160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.001% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.001% MACs, inplace)
+          (3): Conv2d(0.0 GMac, 0.115% MACs, 40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.006% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.021 GMac, 7.703% MACs, 160, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.096% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.001 GMac, 0.301% MACs, 672, 672, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=672, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.024% MACs, 672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.005 GMac, 1.926% MACs, 672, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.006% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+    (14): Block(
+      0.017 GMac, 6.243% MACs, 
+      (se): SeModule(
+        0.001 GMac, 0.237% MACs, 
+        (avg_pool): AdaptiveAvgPool2d(0.0 GMac, 0.000% MACs, output_size=1)
+        (se): Sequential(
+          0.001 GMac, 0.237% MACs, 
+          (0): Conv2d(0.0 GMac, 0.115% MACs, 160, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(0.0 GMac, 0.001% MACs, 40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(0.0 GMac, 0.001% MACs, inplace)
+          (3): Conv2d(0.0 GMac, 0.115% MACs, 40, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(0.0 GMac, 0.006% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): hsigmoid(0.0 GMac, 0.000% MACs, )
+        )
+      )
+      (conv1): Conv2d(0.008 GMac, 2.751% MACs, 160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(0.0 GMac, 0.034% MACs, 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear1): hswish(0.0 GMac, 0.000% MACs, )
+      (conv2): Conv2d(0.001 GMac, 0.430% MACs, 960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+      (bn2): BatchNorm2d(0.0 GMac, 0.034% MACs, 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (nolinear2): hswish(0.0 GMac, 0.000% MACs, )
+      (conv3): Conv2d(0.008 GMac, 2.751% MACs, 960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(0.0 GMac, 0.006% MACs, 160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(0.0 GMac, 0.000% MACs, )
+    )
+  )
+  (conv2): Conv2d(0.008 GMac, 2.751% MACs, 160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (bn2): BatchNorm2d(0.0 GMac, 0.034% MACs, 960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (hs2): hswish(0.0 GMac, 0.000% MACs, )
+  (linear3): Linear(0.001 GMac, 0.449% MACs, in_features=960, out_features=1280, bias=True)
+  (bn3): BatchNorm1d(0.0 GMac, 0.000% MACs, 1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (hs3): hswish(0.0 GMac, 0.000% MACs, )
+  (linear4): Linear(0.001 GMac, 0.468% MACs, in_features=1280, out_features=1000, bias=True)
+)
+Flops:  273.59 MMac
+Params: 3.96 M

@@ -1,0 +1,159 @@
+
+
+
+================= Micronet Deep Learning Vision =================
+Version: 0.2
+Author: Luong Chan Hiep
+Email: hiep.lchan@gmail.com
+-----------------------------------------------
+Working on GPU
+CUDA devices count: 1
+CUDA devices name: GeForce GTX 1080
+=================================================================
+
+
+
+========================= MODEL SUMMARY =========================
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 32, 112, 112]             896
+         InputConv-2         [-1, 32, 112, 112]               0
+            Conv2d-3         [-1, 32, 112, 112]             320
+            Conv2d-4         [-1, 64, 112, 112]           2,112
+     SeperableConv-5         [-1, 64, 112, 112]               0
+            Conv2d-6           [-1, 64, 56, 56]             640
+            Conv2d-7          [-1, 128, 56, 56]           8,320
+     SeperableConv-8          [-1, 128, 56, 56]               0
+            Conv2d-9          [-1, 128, 56, 56]           1,280
+           Conv2d-10          [-1, 128, 56, 56]          16,512
+    SeperableConv-11          [-1, 128, 56, 56]               0
+           Conv2d-12          [-1, 128, 28, 28]           1,280
+           Conv2d-13          [-1, 256, 28, 28]          33,024
+    SeperableConv-14          [-1, 256, 28, 28]               0
+           Conv2d-15          [-1, 256, 28, 28]           2,560
+           Conv2d-16          [-1, 256, 28, 28]          65,792
+    SeperableConv-17          [-1, 256, 28, 28]               0
+           Conv2d-18          [-1, 256, 14, 14]           2,560
+           Conv2d-19          [-1, 512, 14, 14]         131,584
+    SeperableConv-20          [-1, 512, 14, 14]               0
+           Conv2d-21          [-1, 512, 14, 14]           5,120
+           Conv2d-22          [-1, 512, 14, 14]         262,656
+    SeperableConv-23          [-1, 512, 14, 14]               0
+           Conv2d-24          [-1, 512, 14, 14]           5,120
+           Conv2d-25          [-1, 512, 14, 14]         262,656
+    SeperableConv-26          [-1, 512, 14, 14]               0
+           Conv2d-27          [-1, 512, 14, 14]           5,120
+           Conv2d-28          [-1, 512, 14, 14]         262,656
+    SeperableConv-29          [-1, 512, 14, 14]               0
+           Conv2d-30          [-1, 512, 14, 14]           5,120
+           Conv2d-31          [-1, 512, 14, 14]         262,656
+    SeperableConv-32          [-1, 512, 14, 14]               0
+           Conv2d-33          [-1, 512, 14, 14]           5,120
+           Conv2d-34          [-1, 512, 14, 14]         262,656
+    SeperableConv-35          [-1, 512, 14, 14]               0
+           Conv2d-36          [-1, 512, 14, 14]           5,120
+           Conv2d-37         [-1, 1024, 14, 14]         525,312
+    SeperableConv-38         [-1, 1024, 14, 14]               0
+           Conv2d-39         [-1, 1024, 14, 14]          10,240
+           Conv2d-40         [-1, 1024, 14, 14]       1,049,600
+    SeperableConv-41         [-1, 1024, 14, 14]               0
+           Conv2d-42           [-1, 17, 14, 14]          17,425
+           Conv2d-43           [-1, 34, 14, 14]          34,850
+           Conv2d-44           [-1, 32, 14, 14]          32,800
+           Conv2d-45           [-1, 32, 14, 14]          32,800
+================================================================
+Total params: 3,313,907
+Trainable params: 3,313,907
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 68.70
+Params size (MB): 12.64
+Estimated Total Size (MB): 81.91
+----------------------------------------------------------------
+
+
+
+========================= MODEL REPORT ==========================
+MobileNetV1_101(
+  0.83 GMac, 100.000% MACs, 
+  (features): Sequential(
+    0.807 GMac, 97.215% MACs, 
+    (conv0): InputConv(
+      0.011 GMac, 1.355% MACs, 
+      (conv): Conv2d(0.011 GMac, 1.355% MACs, 3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+    (conv1): SeperableConv(
+      0.031 GMac, 3.677% MACs, 
+      (depthwise): Conv2d(0.004 GMac, 0.484% MACs, 32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32)
+      (pointwise): Conv2d(0.026 GMac, 3.193% MACs, 32, 64, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv2): SeperableConv(
+      0.028 GMac, 3.387% MACs, 
+      (depthwise): Conv2d(0.002 GMac, 0.242% MACs, 64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=64)
+      (pointwise): Conv2d(0.026 GMac, 3.145% MACs, 64, 128, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv3): SeperableConv(
+      0.056 GMac, 6.725% MACs, 
+      (depthwise): Conv2d(0.004 GMac, 0.484% MACs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128)
+      (pointwise): Conv2d(0.052 GMac, 6.242% MACs, 128, 128, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv4): SeperableConv(
+      0.027 GMac, 3.242% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=128)
+      (pointwise): Conv2d(0.026 GMac, 3.121% MACs, 128, 256, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv5): SeperableConv(
+      0.054 GMac, 6.459% MACs, 
+      (depthwise): Conv2d(0.002 GMac, 0.242% MACs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256)
+      (pointwise): Conv2d(0.052 GMac, 6.217% MACs, 256, 256, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv6): SeperableConv(
+      0.026 GMac, 3.169% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.060% MACs, 256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=256)
+      (pointwise): Conv2d(0.026 GMac, 3.109% MACs, 256, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv7): SeperableConv(
+      0.052 GMac, 6.326% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.051 GMac, 6.205% MACs, 512, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv8): SeperableConv(
+      0.052 GMac, 6.326% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.051 GMac, 6.205% MACs, 512, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv9): SeperableConv(
+      0.052 GMac, 6.326% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.051 GMac, 6.205% MACs, 512, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv10): SeperableConv(
+      0.052 GMac, 6.326% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.051 GMac, 6.205% MACs, 512, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv11): SeperableConv(
+      0.052 GMac, 6.326% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.051 GMac, 6.205% MACs, 512, 512, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv12): SeperableConv(
+      0.104 GMac, 12.531% MACs, 
+      (depthwise): Conv2d(0.001 GMac, 0.121% MACs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=512)
+      (pointwise): Conv2d(0.103 GMac, 12.410% MACs, 512, 1024, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (conv13): SeperableConv(
+      0.208 GMac, 25.039% MACs, 
+      (depthwise): Conv2d(0.002 GMac, 0.242% MACs, 1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), groups=1024)
+      (pointwise): Conv2d(0.206 GMac, 24.797% MACs, 1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+    )
+  )
+  (heatmap): Conv2d(0.003 GMac, 0.412% MACs, 1024, 17, kernel_size=(1, 1), stride=(1, 1))
+  (offset): Conv2d(0.007 GMac, 0.823% MACs, 1024, 34, kernel_size=(1, 1), stride=(1, 1))
+  (displacement_fwd): Conv2d(0.006 GMac, 0.775% MACs, 1024, 32, kernel_size=(1, 1), stride=(1, 1))
+  (displacement_bwd): Conv2d(0.006 GMac, 0.775% MACs, 1024, 32, kernel_size=(1, 1), stride=(1, 1))
+)
+Flops:  829.63 MMac
+Params: 3.31 M
